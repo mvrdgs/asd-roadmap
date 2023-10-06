@@ -26,5 +26,6 @@ func BenchmarkRestaurant(b *testing.B) {
 		rest.AddNewOrder()
 	}
 
-	rest.Close()
+	counter := rest.Close()
+	assert.Equal(b, uint(b.N), counter)
 }
